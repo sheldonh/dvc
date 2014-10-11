@@ -38,7 +38,7 @@ for spec in $*; do
 	echo $spec | {
 		IFS=: read dir mode uid gid
 		if [ $force = 0 ]; then
-			mounted=$(mount | awk '$3 == "/data" {print $3}' | wc -l)
+			mounted=$(mount | awk '$3 == "'"$dir"'" {print $3}' | wc -l)
 			if [ $mounted = 0 ]; then
 				echo "prepare-volumes: error: $dir is not a docker volume" 1>&2
 				kill -s TERM $break_pid
