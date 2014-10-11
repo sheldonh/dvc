@@ -31,7 +31,7 @@ it is unlikely that both images will map that name to the same numeric value.
 To create a DVC for redis:
 
 ```
-docker run    --name sheldonh/redis-dvc -v /data -v /etc/redis sheldonh/dvc /data:755:999:999 /etc/redis:755:999:999
+docker run    --name redis-dvc -v /data -v /etc/redis sheldonh/dvc /data:755:999:999 /etc/redis:755:999:999
 docker run -d --name redis --volumes-from redis-dvc redis
 ```
 
