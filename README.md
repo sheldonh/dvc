@@ -22,6 +22,9 @@ usage: prepare-volumes [-fr] dir[:mode[:uid[:gid]]] ...
 Note that `uid` and `gid` should be numeric, because even if this image happens to include a user or group name that the DVC consumer is expecting,
 it is unlikely that both images will map that name to the same numeric value.
 
+The `-f` option is only useful in testing. It prevents the entry point from asserting that each `dir` is a mount point,
+which is how it prevents the mistake of specifying directories in `CMD` that were not specified as volumes with docker's `-v` option.
+
 The `-r` option has two uses:
 
 * in environments that automatically restart terminated containers, and
