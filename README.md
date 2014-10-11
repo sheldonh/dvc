@@ -12,20 +12,12 @@ The entry point expects CMD to be a list of one or more directory specifications
 usage: prepare-volumes [-fr] dir[:mode[:uid[:gid]]] ...
 ```
 
-<dl>
-<dt><code>-f</code></dt>
-<dd>Force application to directories that are not mount points (default: false). <em>Only useful in testing.</em></dd>
-<dt><code>-r</code></dt>
-<dd>Run forever instead of terminating when done (default: false).</dd>
-<dt><code>dir</code></dt>
-<dd>The mount point of a volume (which must also be declared with <code>docker run -v</code>).</dd>
-<dt><code>mode</code></dt>
-<dd>The desired permissions of the mount point (default: <code>0755</code>).</dd>
-<dt><code>uid</code></dt>
-<dd>The desired numeric id of the mount point owner (default: <code>0</code>).</dd>
-<dt><code>gid</code></dt>
-<dd>The desired numerid id of the mount point group (default: <code>0</code>).</dd>
-</dl>
+* `-f` Force application to directories that are not mount points (default: false). _Only useful in testing._
+* `-r` Run forever instead of terminating when done (default: false).
+* `dir` The mount point of a volume (which must also be declared with `docker run -v`).
+* `mode` The desired permissions of the mount point (default: `0755`).
+* `uid` The desired numeric id of the mount point owner (default: `0`).
+* `gid` The desired numerid id of the mount point group (default: `0`).
 
 Note that `uid` and `gid` should be numeric, because even if this image happens to include a user or group name that the DVC consumer is expecting,
 it is unlikely that both images will map that name to the same numeric value.
