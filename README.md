@@ -1,4 +1,4 @@
-# dvc
+# sheldonh/dvc
 
 A very simple image for launching Docker volume containers in which ownership and permissions of volume directories are set correctly.
 You could accomplish the same thing with the busybox image.
@@ -26,10 +26,12 @@ usage: prepare-volumes dir[:mode[:uid[:gid]]] ...
 Note that `uid` and `gid` should be numeric, because even if this image happens to include a user or group name that the DVC consumer is expecting,
 it is unlikely that both images will map that name to the same numeric value.
 
+## Example
+
 To create a DVC for redis:
 
 ```
-docker run    --name redis-dvc -v /data -v /etc/redis sheldonh/dvc /data:755:999:999 /etc/redis:755:999:999
+docker run    --name sheldonh/redis-dvc -v /data -v /etc/redis sheldonh/dvc /data:755:999:999 /etc/redis:755:999:999
 docker run -d --name redis --volumes-from redis-dvc redis
 ```
 
