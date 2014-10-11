@@ -13,14 +13,14 @@ usage: prepare-volumes dir[:mode[:uid[:gid]]] ...
 ```
 
 <dl>
-<dt>`dir`</dt>
-<dd>The mount point of a volume (which must also be declared with `docker run -v`).</dd>
-<dt>`mode`</dt>
-<dd>The desired permissions of the mount point (default: `0755`).</dd>
-<dt>`uid`</dt>
-<dd>The desired numeric id of the mount point owner (default: `0`).</dd>
-<dt>`gid`</dt>
-<dd>The desired numerid id of the mount point group (default: `0`).</dd>
+<dt><code>dir</code></dt>
+<dd>The mount point of a volume (which must also be declared with <code>docker run -v</code>).</dd>
+<dt><code>mode</code></dt>
+<dd>The desired permissions of the mount point (default: <code>0755</code>).</dd>
+<dt><code>uid</code></dt>
+<dd>The desired numeric id of the mount point owner (default: <code>0</code>).</dd>
+<dt><code>gid</code></dt>
+<dd>The desired numerid id of the mount point group (default: <code>0</code>).</dd>
 </dl>
 
 Note that `uid` and `gid` should be numeric, because even if this image happens to include a user or group name that the DVC consumer is expecting,
